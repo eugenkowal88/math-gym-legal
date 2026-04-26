@@ -8,7 +8,7 @@ This Privacy Policy describes how Math Gym ("we", "us", "the app") collects, use
 
 Math Gym is an iOS math quiz app developed by Eugen Kowal as an independent solo developer.
 
-**Contact:** eugenkowal88@gmail.com
+**Contact:** [email us](mailto:eugenkowal88@gmail.com)
 
 ## What we collect
 
@@ -23,6 +23,10 @@ Math Gym is an iOS math quiz app developed by Eugen Kowal as an independent solo
 - XP, level, current streak, longest streak, best scores per category and difficulty, completed quizzes, daily challenge results, and combo records.
 - Always stored locally on your device. Backed up to Firebase Firestore for cross-device sync and leaderboards **only if you have signed in** with Apple, Google, or email/password.
 
+### Notifications
+
+If you enable daily reminder notifications during onboarding (or later in iOS Settings), Math Gym schedules a single repeating local notification at the time you choose. The reminder is generated and delivered **entirely on your device** — we do not send the notification from a server, and we do not collect any data about whether you opened it. You can disable notifications at any time in iOS Settings → Notifications → Math Gym.
+
 ### Crash and diagnostic data
 
 - When the app crashes, Firebase Crashlytics collects: device model, OS version, the crash stack trace, and your Firebase user ID (so we can correlate the crash with a specific account if you report one to us).
@@ -32,8 +36,8 @@ Math Gym is an iOS math quiz app developed by Eugen Kowal as an independent solo
 ### What we do NOT collect
 
 - Location, contacts, microphone, camera, health data.
-- Photos beyond the single avatar image you explicitly pick in Edit Profile.
-- Tracking identifiers for advertising — no IDFA, no advertising ID.
+- Photos beyond the single avatar image you explicitly pick in Edit Profile. The iOS PhotosPicker runs sandboxed — we never see your photo library, only the one image you hand us.
+- Tracking identifiers for advertising — no IDFA, no advertising ID. We do not show the iOS App Tracking Transparency prompt because we do not track you across other apps or websites.
 - Browsing history, messages, or any data from other apps.
 - Payment information — Apple handles all in-app purchases through StoreKit; we never see your card details.
 
@@ -47,6 +51,18 @@ Math Gym is an iOS math quiz app developed by Eugen Kowal as an independent solo
 | Crash and diagnostic data | Diagnose and fix crashes from real users |
 
 We do not sell, rent, or trade your personal information. Ever.
+
+## Legal basis for processing (GDPR)
+
+If you are in the EU, UK, or Switzerland, we process your data on the following grounds:
+
+- **Performance of a contract** — to provide the app's core functionality (your account, your saved progress, leaderboard participation).
+- **Legitimate interests** — to diagnose crashes and improve the app (Firebase Crashlytics non-fatal logs and crash reports).
+- **Consent** — for optional features like daily reminder notifications. You can revoke consent at any time in iOS Settings or by signing out in the app.
+
+## Automated decision-making
+
+We do not use your data for automated decision-making, profiling, or any process that produces legal or similarly significant effects on you. Your XP, level, streak, and leaderboard rank are gameplay scoring — not automated decisions in the legal sense.
 
 ## Third-party services we use
 
@@ -64,15 +80,19 @@ Firestore data is stored in Google's `eur3` (European multi-region) data centers
 
 We keep your data until you delete your account in the app or stop using the app. Anonymous accounts from uninstalled apps are retained indefinitely because we have no way to identify them as abandoned.
 
+When you delete your account from inside the app, your local data is wiped immediately and the cloud copy in Firestore is removed within 30 days.
+
 ## Your rights
 
 You can:
 
 - **Access your data** — visible in the Profile tab inside the app.
 - **Edit your data** — change your display name and avatar via Profile → Edit.
-- **Delete your account and all associated data** — Profile tab → Manage account → Delete account. This is irreversible.
-- **Export your data** — email us at eugenkowal88@gmail.com and we will send you a copy within 30 days.
+- **Delete your account and all associated data** — Profile tab → Manage account → Delete account. Local data is wiped immediately; the cloud copy is removed within 30 days. Deletion is irreversible.
+- **Export your data** — [email us](mailto:eugenkowal88@gmail.com) and we will send you a copy within 30 days.
 - **Withdraw consent** — sign out at any time. Your local data stays on your device until you uninstall.
+
+We will not deny you service, charge different prices, or provide a degraded experience because you exercise any of these rights.
 
 If you live in the EU, UK, or Switzerland, you have additional rights under GDPR including the right to lodge a complaint with your local data protection authority.
 
@@ -80,7 +100,7 @@ If you live in California, you have additional rights under the CCPA, including 
 
 ## Children's privacy
 
-Math Gym is rated 12+. We do not knowingly collect data from children under 13. If you believe a child under 13 has used the app and provided us with personal information, contact us at eugenkowal88@gmail.com and we will delete their data immediately.
+Math Gym is rated 12+. We do not knowingly collect data from children under 13. If you believe a child under 13 has used the app and provided us with personal information, [email us](mailto:eugenkowal88@gmail.com) and we will delete their data immediately.
 
 ## Security
 
@@ -94,6 +114,4 @@ We may update this policy from time to time. Material changes will be reflected 
 
 ## Contact
 
-Questions, concerns, requests:
-
-**Email:** eugenkowal88@gmail.com
+Questions, concerns, or requests: [email us](mailto:eugenkowal88@gmail.com).
