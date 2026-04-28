@@ -33,6 +33,17 @@ If you enable daily reminder notifications during onboarding (or later in iOS Se
 - Collection happens automatically the next time you re-launch the app after a crash.
 - Anonymous-only users are tagged with their anonymous Firebase ID; signed-in users are tagged with their persistent Firebase UID.
 
+### Age verification
+
+When you first launch the app, we ask your age once. We use the answer **only** to confirm that you are 13 or older. We do **not** store the number itself — only the result of that check (a yes/no flag stored locally on your device).
+
+If you indicate you are under 13:
+- You can keep playing Math Gym locally on your device.
+- You cannot create an account, sign in, or appear on global leaderboards.
+- Your progress stays on your device only and is never sent to our servers.
+
+Reinstalling the app re-runs onboarding, including the age question.
+
 ### What we do NOT collect
 
 - Location, contacts, microphone, camera, health data.
