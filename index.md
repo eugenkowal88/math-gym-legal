@@ -1,6 +1,6 @@
 # Math Gym — Privacy Policy
 
-**Effective date:** 26 April 2026
+**Effective date:** 29 April 2026
 
 This Privacy Policy describes how Math Gym ("we", "us", "the app") collects, uses, and protects your information when you use the iOS application.
 
@@ -26,6 +26,18 @@ Math Gym is an iOS math quiz app developed by Eugen Kowal as an independent solo
 ### Notifications
 
 If you enable daily reminder notifications during onboarding (or later in iOS Settings), Math Gym schedules a single repeating local notification at the time you choose. The reminder is generated and delivered **entirely on your device** — we do not send the notification from a server, and we do not collect any data about whether you opened it. You can disable notifications at any time in iOS Settings → Notifications → Math Gym.
+
+### App preferences (stored locally only)
+
+A few small settings live on your device only — never sent to our servers, never linked to your account:
+
+- The UI language you pick during onboarding (or change later in Profile).
+- Whether you've completed onboarding and the age-13 verification result.
+- Whether you've enabled daily reminder notifications and the time you chose.
+- Internal tutorial-state flags (which coachmarks you've already seen).
+- A streak-freeze prompt timestamp.
+
+These are stored using Apple's standard `UserDefaults` and SwiftData mechanisms in your app's sandbox. They're wiped if you uninstall the app, and they may be included in your iCloud Backup if you have iCloud Backup enabled — that backup is encrypted by Apple and not accessible to us.
 
 ### Crash and diagnostic data
 
