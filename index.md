@@ -1,6 +1,6 @@
 # Math Gym — Privacy Policy
 
-**Effective date:** 29 April 2026
+**Effective date:** 16 May 2026
 
 This Privacy Policy describes how Math Gym ("we", "us", "the app") collects, uses, and protects your information when you use the iOS application.
 
@@ -22,6 +22,19 @@ Math Gym is an iOS math quiz app developed by Eugen Kowal as an independent solo
 
 - XP, level, current streak, longest streak, best scores per category and difficulty, completed quizzes, daily challenge results, and combo records.
 - Always stored locally on your device. Backed up to Firebase Firestore for cross-device sync and leaderboards **only if you have signed in** with Apple, Google, or email/password.
+
+### Subscription status
+
+If you subscribe to Math Gym Premium, your device's local StoreKit data is the source of truth — your subscription works fully offline once active. If you are signed in (Apple, Google, or email/password), we also store a small **advisory cache** of your subscription status in Firestore so that a different device using the same account can immediately know you're a subscriber on first launch, before StoreKit finishes its initial refresh.
+
+The cache contains four fields on your user document:
+
+- `isPremium` — whether you currently have an active subscription
+- `subscriptionPlan` — `"monthly"`, `"annual"`, or empty
+- `subscriptionExpiresAt` — your next renewal or expiration date
+- `subscribedAt` — when you first subscribed
+
+These fields are derived from Apple's StoreKit. We do **not** receive or store any payment information from Apple — only the entitlement state your device computes locally. Apple is the source of truth in all cases; if the cache disagrees with StoreKit, your device trusts StoreKit.
 
 ### Notifications
 
@@ -72,6 +85,7 @@ Reinstalling the app re-runs onboarding, including the age question.
 | Email and display name | Account recovery, cross-device sync, leaderboard identification |
 | Game progress | Display your stats, power XP and leveling, populate global leaderboards (only if signed in) |
 | Crash and diagnostic data | Diagnose and fix crashes from real users |
+| Subscription status cache | Recognize you as a subscriber on a new device before StoreKit's first refresh completes; unlock Premium features without a wait |
 
 We do not sell, rent, or trade your personal information. Ever.
 
@@ -92,6 +106,7 @@ We do not use your data for automated decision-making, profiling, or any process
 - **Firebase Authentication, Firestore, and Crashlytics** (Google LLC) — see [Google's Privacy Policy](https://policies.google.com/privacy).
 - **Sign in with Apple** — see [Apple's Privacy Policy](https://www.apple.com/legal/privacy/).
 - **Sign in with Google** — see [Google's Privacy Policy](https://policies.google.com/privacy).
+- **Apple StoreKit / App Store** (Apple Inc.) — processes all in-app subscriptions and payment information. See [Apple's Privacy Policy](https://www.apple.com/legal/privacy/).
 
 These providers process your data under their own Data Processing Agreements. They may store data on servers located outside your country.
 
@@ -103,7 +118,30 @@ Firestore data is stored in Google's `eur3` (European multi-region) data centers
 
 We keep your data until you delete your account in the app or stop using the app. Anonymous accounts from uninstalled apps are retained indefinitely because we have no way to identify them as abandoned.
 
-When you delete your account from inside the app, your local data is wiped immediately and the cloud copy in Firestore is removed within 30 days.
+When you delete your account from inside the app, your local data is wiped immediately and the cloud copy in Firestore is removed within 30 days. Your subscription is **not** cancelled by account deletion — it continues to renew through Apple until you cancel it separately in iOS Settings → Apple ID → Subscriptions.
+
+## Subscriptions and billing
+
+Math Gym Premium is sold as an auto-renewing subscription through Apple's App Store. There are two plans:
+
+- **Monthly:** $4.99 per month
+- **Annual:** $29.99 per year, with a 7-day free trial for new subscribers
+
+Premium unlocks Gold and Diamond difficulty tiers and applies a 1.5× XP multiplier to all sessions.
+
+**How billing works.** Payment is charged to your Apple ID at the moment you confirm the purchase (or at the end of the free trial, if you started one). Your subscription auto-renews at the same price unless you cancel at least 24 hours before the end of the current period. Apple notifies you before each renewal. Any unused portion of a free trial is forfeited when you start a paid subscription.
+
+**Cancelling.** You can cancel at any time in iOS Settings → tap your Apple ID at the top → Subscriptions → Math Gym → Cancel Subscription. Cancellation takes effect at the end of your current paid period — you keep Premium access until then. We never auto-cancel a subscription on your behalf, and we never charge fees outside the Apple-published price.
+
+**Restoring purchases.** If you reinstall the app or sign in on a new device, tap "Restore Purchases" in the paywall or in your Profile to re-apply your active subscription. This calls Apple's `AppStore.sync()` to verify your purchase against the same Apple ID — no email or password is sent to us.
+
+**Family Sharing.** Math Gym Premium is enabled for Apple Family Sharing. Up to six family members in your Family Sharing group share one paid subscription at no extra cost. Family Sharing is managed entirely by Apple's Family Sharing system; we receive only the entitlement, not the identities of the other family members.
+
+**Payment information.** Apple handles your entire payment process: card details, billing address, tax, currency conversion, refunds, and renewal reminders. We do not see your card number, billing address, or any other payment information. Apple shares with our app only whether you currently have an active entitlement.
+
+**Refunds.** All refund requests must go through Apple at [reportaproblem.apple.com](https://reportaproblem.apple.com). We cannot process refunds directly. If Apple grants a refund and revokes your entitlement, your Premium access ends and the cache described in **Subscription status** above is updated to match.
+
+**Pricing.** Local currency conversion and regional price tiers are set by Apple. The prices above are the U.S. App Store prices; your local price may differ.
 
 ## Your rights
 
