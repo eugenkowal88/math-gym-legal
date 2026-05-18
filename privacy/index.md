@@ -1,6 +1,6 @@
 # Math Gym — Privacy Policy
 
-**Effective date:** 16 May 2026
+**Effective date:** 18 May 2026
 
 This Privacy Policy describes how Math Gym ("we", "us", "the app") collects, uses, and protects your information when you use the iOS application.
 
@@ -77,6 +77,20 @@ Reinstalling the app re-runs onboarding, including the age question.
 - Browsing history, messages, or any data from other apps.
 - Payment information — Apple handles all in-app purchases through StoreKit; we never see your card details.
 
+### Game Center (achievements and leaderboards)
+
+If you have Game Center enabled on your device (Settings → Game Center → signed in with your Apple ID), Math Gym uses Apple's Game Center to store your achievement progress and leaderboard scores. When this happens, Apple's Game Center service receives:
+
+- Your Game Center player ID (a persistent identifier managed by Apple, distinct from your Apple ID).
+- Your Game Center alias (the nickname you chose for Game Center).
+- Your achievement progress (per-achievement percentage complete) and leaderboard scores (Total XP, Weekly XP, Chamber best run length).
+
+This data is stored by Apple on its servers, separately from any data we store. We do not collect, copy, or process this Game Center data ourselves — we only read and write to it via Apple's GameKit framework. Apple's handling is governed by [Apple's Game Center Data and Privacy](https://www.apple.com/legal/privacy/data/en/game-center/).
+
+Game Center is opt-out, not opt-in: if you do not want Math Gym (or any app) to use it, sign out of Game Center in iOS Settings → Game Center. The app still works fully — you just won't see achievements or appear on leaderboards.
+
+**Under-13 users:** because of the age-verification step during onboarding, users who have indicated they are under 13 are not enrolled in Game Center by the app. No Game Center data is sent for them.
+
 ## Why we collect it
 
 | Data | Purpose |
@@ -86,6 +100,7 @@ Reinstalling the app re-runs onboarding, including the age question.
 | Game progress | Display your stats, power XP and leveling, populate global leaderboards (only if signed in) |
 | Crash and diagnostic data | Diagnose and fix crashes from real users |
 | Subscription status cache | Recognize you as a subscriber on a new device before StoreKit's first refresh completes; unlock Premium features without a wait |
+| Game Center achievement progress and leaderboard scores | Award achievements you've earned; show you on global Game Center leaderboards (only if you are signed in to Game Center on your device) |
 
 We do not sell, rent, or trade your personal information. Ever.
 
@@ -107,6 +122,7 @@ We do not use your data for automated decision-making, profiling, or any process
 - **Sign in with Apple** — see [Apple's Privacy Policy](https://www.apple.com/legal/privacy/).
 - **Sign in with Google** — see [Google's Privacy Policy](https://policies.google.com/privacy).
 - **Apple StoreKit / App Store** (Apple Inc.) — processes all in-app subscriptions and payment information. See [Apple's Privacy Policy](https://www.apple.com/legal/privacy/).
+- **Apple Game Center / GameKit** (Apple Inc.) — stores achievement progress and leaderboard scores when you are signed in to Game Center. See [Apple's Game Center Data and Privacy](https://www.apple.com/legal/privacy/data/en/game-center/).
 
 These providers process your data under their own Data Processing Agreements. They may store data on servers located outside your country.
 
